@@ -1,0 +1,2 @@
+config SHIELD_SCOTTO9
+    def_bool $(shields_list_contains,scotto9)

@@ -1,0 +1,6 @@
+if SHIELD_SCOTTO9
+
+config ZMK_KEYBOARD_NAME
+    default "Scotto9"
+
+endif

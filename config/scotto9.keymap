@@ -1,0 +1,27 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                // Row 1 (Top Row) - Cmd+Opt+7, Cmd+Opt+8, Cmd+Opt+9
+                &kp LG(LA(N7))  &kp LG(LA(N8))  &kp LG(LA(N9))
+                
+                // Row 2 (Middle Row) - Cmd+Opt+4, Cmd+Opt+5, Cmd+Opt+6
+                &kp LG(LA(N4))  &kp LG(LA(N5))  &kp LG(LA(N6))
+                
+                // Row 3 (Bottom Row) - Cmd+Opt+1, Cmd+Opt+2, Cmd+Opt+3
+                &kp LG(LA(N1))  &kp LG(LA(N2))  &kp LG(LA(N3))
+            >;
+        };
+    };
+};
