@@ -42,6 +42,7 @@ Col2 Col1 Col0
 The matrix doesn’t change, but your view does. Use the diagram that matches how you’re holding the board.
 
 ### Front view — keys UP (switches/keycaps facing you)
+
 You’ll route columns vertically; rows leave to the MCU at the right edge.
 
 ```
@@ -60,6 +61,7 @@ Row 2 →  │  1   │  2   │  3   │  → MCU pin 002
 ```
 
 ### Back view — keys DOWN (you see the diodes)
+
 Flip the board over and everything is mirrored left↔right. Columns appear left→right.
 
 ```
@@ -113,9 +115,10 @@ Column wire ── Switch other leg
 ```
 
 Why this matters
+
 - With COL2ROW, the firmware drives COLUMNS and reads ROWS. Putting the diode’s
-   band toward the ROW ensures current flows from a driven column into the row
-   only when a key is pressed, preventing ghosting.
+  band toward the ROW ensures current flows from a driven column into the row
+  only when a key is pressed, preventing ghosting.
 
 ### Step-by-Step:
 

@@ -35,14 +35,14 @@ Your ZMK firmware is now configured for a Scotto9 macropad (3x3 = 9 keys) using 
 
 When you build your keyboard, connect these pins (look for these numbers on your board):
 
-| Pin Label | GPIO | Connect To | Keys |
-|-----------|------|------------|------|
-| **017** | P0.17 | Column 0 (right) | 9, 6, 3 |
-| **020** | P0.20 | Column 1 (middle) | 8, 5, 2 |
-| **022** | P0.22 | Column 2 (left) | 7, 4, 1 |
-| **031** | P0.31 | Row 0 (top) | 7, 8, 9 |
-| **029** | P0.29 | Row 1 (middle) | 4, 5, 6 |
-| **002** | P0.02 | Row 2 (bottom) | 1, 2, 3 |
+| Pin Label | GPIO  | Connect To        | Keys    |
+| --------- | ----- | ----------------- | ------- |
+| **017**   | P0.17 | Column 0 (right)  | 9, 6, 3 |
+| **020**   | P0.20 | Column 1 (middle) | 8, 5, 2 |
+| **022**   | P0.22 | Column 2 (left)   | 7, 4, 1 |
+| **031**   | P0.31 | Row 0 (top)       | 7, 8, 9 |
+| **029**   | P0.29 | Row 1 (middle)    | 4, 5, 6 |
+| **002**   | P0.02 | Row 2 (bottom)    | 1, 2, 3 |
 
 ## Next Steps
 
