@@ -37,9 +37,30 @@ jobs:
         run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=scotto9 -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: Scotto9 DTS File
         if: ${{ always() }}
-        run: cat -n build/zephyr/nice_nano_v2.dts.pre.tmp
+        continue-on-error: true
+        shell: bash
+        run: |
+          set +e
+          for f in \
+            build/zephyr/zephyr.dts \
+            build/zephyr/zephyr.dts.pre.tmp \
+            build/zephyr/nice_nano_v2.dts.pre.tmp; do
+            if [[ -f "$f" ]]; then
+              echo "=== Dumping $f ==="
+              cat -n "$f"
+            fi
+          done
+          true
       - name: Scotto9 Kconfig file
-        run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
+        if: ${{ always() }}
+        continue-on-error: true
+        shell: bash
+        run: |
+          if [[ -f build/zephyr/.config ]]; then
+            grep -v "^#" build/zephyr/.config | grep -v "^$"
+          else
+            echo "No build/zephyr/.config found (build likely failed earlier)."
+          fi
       - name: Rename zmk.uf2
         run: cp build/zephyr/zmk.uf2 scotto9-nice_nano_v2.uf2
       - name: Archive (Scotto9)
