@@ -77,17 +77,12 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            // Diagnostic: map to plain digits so sites/apps register keys reliably.
-            // Once verified, we can switch back to Cmd+Opt combos.
             bindings = <
-                // Row 1 (Top Row) - 7, 8, 9
-                &cmd_7  &cmd_8  &cmd_9
+                // Row 0 (top): keys 1–4
+                &cmd_1  &cmd_2  &cmd_3  &cmd_4
 
-                // Row 2 (Middle Row) - 4, 5, 6
-                &cmd_4  &cmd_5  &cmd_6
-
-                // Row 3 (Bottom Row) - 1, 2, 3
-                &cmd_1  &cmd_2  &cmd_3
+                // Row 1 (bottom): keys 5–8
+                &cmd_5  &cmd_6  &cmd_7  &cmd_8
             >;
         };
     };
