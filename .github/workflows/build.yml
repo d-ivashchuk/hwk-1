@@ -27,6 +27,8 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+      - name: Reset west workspace
+        run: rm -rf .west
       - name: West Init
         run: west init -l config
       - name: West Update
