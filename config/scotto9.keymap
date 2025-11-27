@@ -78,11 +78,17 @@
 
         default_layer {
             bindings = <
-                // Row 0 (top): keys 1–4
-                &cmd_1  &cmd_2  &cmd_3  &cmd_4
+                // Row 0
+                &cmd_1  &cmd_2
 
-                // Row 1 (bottom): keys 5–8
-                &cmd_5  &cmd_6  &cmd_7  &cmd_8
+                // Row 1
+                &cmd_3  &cmd_4
+
+                // Row 2
+                &cmd_5  &cmd_6
+
+                // Row 3
+                &cmd_7  &cmd_8
             >;
         };
     };

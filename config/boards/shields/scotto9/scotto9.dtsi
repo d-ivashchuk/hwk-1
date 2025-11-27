@@ -9,12 +9,14 @@
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
-        columns = <4>;
-        rows = <2>;
-        /* 2x4 macropad: rows = top,bottom; columns = left→right */
+        columns = <2>;
+        rows = <4>;
+        /* 4x2 macropad: rows = top→bottom; columns = left→right */
         map = <
-            RC(0,0) RC(0,1) RC(0,2) RC(0,3)
-            RC(1,0) RC(1,1) RC(1,2) RC(1,3)
+            RC(0,0) RC(0,1)
+            RC(1,0) RC(1,1)
+            RC(2,0) RC(2,1)
+            RC(3,0) RC(3,1)
         >;
     };
 
@@ -24,18 +26,18 @@
         
         diode-direction = "col2row";
         
-        // Columns (left → right): 029, 002, 115, 113
+        // Columns (left → right): 020, 022
         col-gpios
-            = <&gpio0 29 GPIO_ACTIVE_HIGH>   // Pin labeled 029  (C0 - leftmost)
-            , <&gpio0 2  GPIO_ACTIVE_HIGH>   // Pin labeled 002  (C1)
-            , <&gpio1 15 GPIO_ACTIVE_HIGH>   // Pin labeled 115  (C2)
-            , <&gpio1 13 GPIO_ACTIVE_HIGH>   // Pin labeled 113  (C3 - rightmost)
+            = <&gpio0 20 GPIO_ACTIVE_HIGH>   // Pin labeled 020 (C0)
+            , <&gpio0 22 GPIO_ACTIVE_HIGH>   // Pin labeled 022 (C1)
             ;
 
-        // Rows (top → bottom): 020, 022
+        // Rows (top → bottom): 029, 002, 115, 113
         row-gpios
-            = <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Pin labeled 020 (top row)
-            , <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Pin labeled 022 (bottom row)
+            = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Pin labeled 029 (R0)
+            , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Pin labeled 002 (R1)
+            , <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Pin labeled 115 (R2)
+            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Pin labeled 113 (R3)
             ;
     };
 };
