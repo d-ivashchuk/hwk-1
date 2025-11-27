@@ -9,16 +9,14 @@
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
-        columns = <3>;
-        rows = <3>;
-        /*
-         * Hardware column order (per wiring): C0=017 (right), C1=020 (middle), C2=022 (left)
-         * Transform flips columns so keymap reads left→right (7 8 9 on the top row).
-         */
+        columns = <2>;
+        rows = <4>;
+        /* 4x2 macropad: rows = top→bottom; columns = left→right */
         map = <
-            RC(0,2) RC(0,1) RC(0,0)
-            RC(1,2) RC(1,1) RC(1,0)
-            RC(2,2) RC(2,1) RC(2,0)
+            RC(0,0) RC(0,1)
+            RC(1,0) RC(1,1)
+            RC(2,0) RC(2,1)
+            RC(3,0) RC(3,1)
         >;
     };
 
@@ -28,20 +26,18 @@
         
         diode-direction = "col2row";
         
-        // Columns: Using sequential GPIO pins on left header
-        // 017 (P0.17), 020 (P0.20), 022 (P0.22)
+        // Columns (left → right): 020, 022
         col-gpios
-            = <&gpio0 17 GPIO_ACTIVE_HIGH>   // Pin labeled 017
-            , <&gpio0 20 GPIO_ACTIVE_HIGH>   // Pin labeled 020
-            , <&gpio0 22 GPIO_ACTIVE_HIGH>   // Pin labeled 022
+            = <&gpio0 20 GPIO_ACTIVE_HIGH>   // Pin labeled 020 (C0)
+            , <&gpio0 22 GPIO_ACTIVE_HIGH>   // Pin labeled 022 (C1)
             ;
 
-        // Rows: Using direct GPIO pins visible on your board
-        // 031 (P0.31), 029 (P0.29), 002 (P0.02)
+        // Rows (top → bottom): 029, 002, 115, 113
         row-gpios
-            = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Pin labeled 031 (top row)
-            , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Pin labeled 029 (middle row)
-            , <&gpio0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>    // Pin labeled 002 (bottom row)
+            = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Pin labeled 029 (R0)
+            , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Pin labeled 002 (R1)
+            , <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Pin labeled 115 (R2)
+            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Pin labeled 113 (R3)
             ;
     };
 };
