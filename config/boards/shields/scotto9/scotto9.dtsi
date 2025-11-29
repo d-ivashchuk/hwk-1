@@ -33,13 +33,13 @@
             , <&gpio0 22 GPIO_ACTIVE_HIGH>   // Pin labeled 022 (C1)
             ;
 
-        // Rows (top → bottom): 029, 002, 115, 113, 017 (extra BT reset button row)
+        // Rows (top → bottom): 029, 002, 115, 113, 100 (extra BT reset button row)
         row-gpios
             = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Pin labeled 029 (R0)
             , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Pin labeled 002 (R1)
             , <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Pin labeled 115 (R2)
             , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Pin labeled 113 (R3)
-            , <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Pin labeled 017 (R4 - BT reset button)
+            , <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // Pin labeled 100 (R4 - BT reset button)
             ;
     };
 };
