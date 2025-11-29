@@ -14,63 +14,63 @@
             compatible = "zmk,behavior-macro";
             label = "CMD_1";
             #binding-cells = <0>;
-            bindings = <&kp N1>;
+            bindings = <&kp LC(LS(N1))>;
         };
 
         cmd_2: cmd_2_macro {
             compatible = "zmk,behavior-macro";
             label = "CMD_2";
             #binding-cells = <0>;
-            bindings = <&kp N2>;
+            bindings = <&kp LC(LS(N2))>;
         };
 
         cmd_3: cmd_3_macro {
             compatible = "zmk,behavior-macro";
             label = "CMD_3";
             #binding-cells = <0>;
-            bindings = <&kp N3>;
+            bindings = <&kp LC(LS(N3))>;
         };
 
         cmd_4: cmd_4_macro {
             compatible = "zmk,behavior-macro";
             label = "CMD_4";
             #binding-cells = <0>;
-            bindings = <&kp N4>;
+            bindings = <&kp LC(LS(N4))>;
         };
 
         cmd_5: cmd_5_macro {
             compatible = "zmk,behavior-macro";
             label = "CMD_5";
             #binding-cells = <0>;
-            bindings = <&kp N5>;
+            bindings = <&kp LC(LS(N5))>;
         };
 
         cmd_6: cmd_6_macro {
             compatible = "zmk,behavior-macro";
             label = "CMD_6";
             #binding-cells = <0>;
-            bindings = <&kp N6>;
+            bindings = <&kp LC(LS(N6))>;
         };
 
         cmd_7: cmd_7_macro {
             compatible = "zmk,behavior-macro";
             label = "CMD_7";
             #binding-cells = <0>;
-            bindings = <&kp N7>;
+            bindings = <&kp LC(LS(N7))>;
         };
 
         cmd_8: cmd_8_macro {
             compatible = "zmk,behavior-macro";
             label = "CMD_8";
             #binding-cells = <0>;
-            bindings = <&kp N8>;
+            bindings = <&kp LC(LS(N8))>;
         };
 
         cmd_9: cmd_9_macro {
             compatible = "zmk,behavior-macro";
             label = "CMD_9";
             #binding-cells = <0>;
-            bindings = <&kp N9>;
+            bindings = <&kp LC(LS(N9))>;
         };
     };
 
