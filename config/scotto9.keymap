@@ -86,8 +86,8 @@
                 &cmd_7  &cmd_3
                 &cmd_6  &cmd_2
                 &cmd_5  &cmd_1
-                // Extra row (R4): BT reset button on 017×020, unused on 017×022
-                &bt BT_CLR  &none
+                // Extra kscan device (btclr_kscan): dedicated BT clear button on P1.00→GND
+                &bt BT_CLR
             >;
         };
     };
