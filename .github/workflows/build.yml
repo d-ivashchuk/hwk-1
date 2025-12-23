@@ -34,7 +34,7 @@ jobs:
       - name: West Zephyr export
         run: west zephyr-export
       - name: West Build (Scotto9)
-        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=scotto9 -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build -s zmk/app -b nice_nano -- -DSHIELD=scotto9 -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: Scotto9 DTS File
         if: ${{ always() }}
         continue-on-error: true
