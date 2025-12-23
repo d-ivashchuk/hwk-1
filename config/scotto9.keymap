@@ -87,7 +87,7 @@
                 &cmd_6  &cmd_2
                 &cmd_5  &cmd_1
                 // Extra kscan device (btclr_kscan): dedicated BT clear button on P1.00→GND
-                &bt BT_CLR
+                &bt BT_CLR  &none
             >;
         };
     };

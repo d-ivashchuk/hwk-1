@@ -10,13 +10,14 @@
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <2>;
-        rows = <4>;
-        /* 4x2 macropad: rows = top→bottom; columns = left→right */
+        rows = <5>;
+        /* 5x2 macropad: rows = top→bottom; columns = left→right */
         map = <
             RC(0,0) RC(0,1)
             RC(1,0) RC(1,1)
             RC(2,0) RC(2,1)
             RC(3,0) RC(3,1)
+            RC(4,0) RC(4,1)
         >;
     };
 
@@ -51,6 +52,19 @@
 
     kscan_composite: kscan_composite {
         compatible = "zmk,kscan-composite";
-        input-devices = <&kscan0 &btclr_kscan>;
+        rows = <5>;
+        columns = <2>;
+
+        matrix0: macropad_matrix {
+            kscan = <&kscan0>;
+            row-offset = <0>;
+            col-offset = <0>;
+        };
+
+        btclr: btclr_direct {
+            kscan = <&btclr_kscan>;
+            row-offset = <4>;
+            col-offset = <0>;
+        };
     };
 };
